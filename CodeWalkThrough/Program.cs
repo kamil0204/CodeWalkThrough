@@ -20,10 +20,6 @@ try
     using var repoManager = new RepositoryManager(projectPath, dbPath);
     repoManager.AnalyzeAndStoreRepositoryStructure();
     
-    // Print the file structure
-    Console.WriteLine("\nRepository Structure:");
-    repoManager.PrintFileStructure();
-    
     // Export as Markdown
     var markdownPath = Path.Combine(exportPath, "repository-structure.md");
     repoManager.ExportAsMarkdownTree(markdownPath);
