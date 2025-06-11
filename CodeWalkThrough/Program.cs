@@ -15,12 +15,9 @@ Directory.CreateDirectory(exportPath);
 try
 {
     Console.WriteLine($"Analyzing repository: {projectPath}");
-    Console.WriteLine($"Database will be stored at: {dbPath}");
     
-    // Create the repository manager
+    // Create the repository manager and analyze structure
     using var repoManager = new RepositoryManager(projectPath, dbPath);
-    
-    // Analyze and store the repository structure
     repoManager.AnalyzeAndStoreRepositoryStructure();
     
     // Print the file structure
@@ -37,7 +34,6 @@ try
 catch (Exception ex)
 {
     Console.WriteLine($"Error: {ex.Message}");
-    Console.WriteLine(ex.StackTrace);
 }
 
 

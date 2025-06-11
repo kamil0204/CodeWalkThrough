@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\repos\\CodeWalkThrough\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{702E64B9-4B3F-482E-B0A6-10BC3FA04CC2}|CodeWalkThrough\\CodeWalkThrough.csproj|c:\\repos\\codewalkthrough\\codewalkthrough\\managers\\repositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{702E64B9-4B3F-482E-B0A6-10BC3FA04CC2}|CodeWalkThrough\\CodeWalkThrough.csproj|solutionrelative:codewalkthrough\\managers\\repositorymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{702E64B9-4B3F-482E-B0A6-10BC3FA04CC2}|CodeWalkThrough\\CodeWalkThrough.csproj|c:\\repos\\codewalkthrough\\codewalkthrough\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{702E64B9-4B3F-482E-B0A6-10BC3FA04CC2}|CodeWalkThrough\\CodeWalkThrough.csproj|solutionrelative:codewalkthrough\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RepositoryManager.cs",
+              "DocumentMoniker": "C:\\repos\\CodeWalkThrough\\CodeWalkThrough\\Managers\\RepositoryManager.cs",
+              "RelativeDocumentMoniker": "CodeWalkThrough\\Managers\\RepositoryManager.cs",
+              "ToolTip": "C:\\repos\\CodeWalkThrough\\CodeWalkThrough\\Managers\\RepositoryManager.cs",
+              "RelativeToolTip": "CodeWalkThrough\\Managers\\RepositoryManager.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAIwD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T14:25:35.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\repos\\CodeWalkThrough\\CodeWalkThrough\\Program.cs",
               "RelativeDocumentMoniker": "CodeWalkThrough\\Program.cs",
@@ -26,8 +43,7 @@
               "RelativeToolTip": "CodeWalkThrough\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:46:09.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-11T13:46:09.862Z"
             }
           ]
         }

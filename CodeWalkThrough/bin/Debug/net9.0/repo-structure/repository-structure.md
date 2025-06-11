@@ -1,20 +1,49 @@
 ﻿# Repository Structure
 
 - 📁 **applications.web.intel-foundry.ifs3.api-project**
+  - 📄 **.dockerignore**
+  - 📄 **.editorconfig**
+  - 📄 **.gitignore**
   - 📄 **Dockerfile**
   - 📄 **Dockerfile-preprod**
   - 📄 **Dockerfile-prod**
   - 📄 **Dockerfile-stage**
   - 📄 **IFS.Project.sln**
   - 📄 **README.md**
+  - 📁 **.caas**
+    - 📁 **dev**
+      - 📄 **cert-dev.yaml**
+      - 📄 **deployment-dev.yaml**
+      - 📄 **ingress-dev.yaml**
+      - 📄 **issuer-dev.yaml**
+      - 📄 **service-dev.yaml**
+  - 📁 **.github**
+    - 📄 **CODEOWNERS**
+    - 📄 **pull_request_template.md**
+    - 📁 **workflows**
+      - 📄 **Build.yml**
+      - 📄 **BuildUploadDev.yml**
+      - 📄 **BuildUploadPreProd.yml**
+      - 📄 **BuildUploadProd.yml**
+      - 📄 **BuildUploadStage.yml**
+      - 📄 **Dev_Deployment.yml**
+      - 📄 **main.yml**
+      - 📄 **PreProd_Deployment.yml**
+      - 📄 **Prod_Deployment.yml**
+      - 📄 **semgrep.yml**
+      - 📄 **Stage_Deployment.yml**
   - 📁 **IFS.Project.Adapters**
     - 📄 **AbstractTransactionalAdapter.cs**
     - 📄 **IFS.Project.Adapters.csproj**
     - 📄 **IfsTransactionalSqlAdapter.cs**
     - 📄 **IfsTrxTransactionalSqlAdapter.cs**
   - 📁 **IFS.Project.API**
+    - 📄 **appsettings.Development.json**
+    - 📄 **appsettings.json**
     - 📄 **IFS.Project.API.csproj**
     - 📄 **Program.cs**
+    - 📁 **.config**
+      - 📄 **dotnet-tools.json**
     - 📁 **Configurations**
       - 📄 **IfsDbConfiguration.cs**
       - 📄 **PortalConfigurationSection.cs**
@@ -27,6 +56,9 @@
     - 📁 **Extensions**
       - 📄 **LoggingExtension.cs**
     - 📁 **Properties**
+      - 📄 **launchSettings.json**
+      - 📄 **serviceDependencies.json**
+      - 📄 **serviceDependencies.local.json**
     - 📁 **Worker**
       - 📄 **ConfigWatcherWorker.cs**
   - 📁 **IFS.Project.Constants**

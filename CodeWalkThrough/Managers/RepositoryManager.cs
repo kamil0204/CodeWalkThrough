@@ -13,11 +13,6 @@ namespace CodeWalkThrough.Managers
     {
         private readonly FileSystemService _fileSystemService;
         private readonly IGraphDatabaseService _databaseService;
-
-        /// <summary>
-        /// Gets the database service
-        /// </summary>
-        public IGraphDatabaseService DatabaseService => _databaseService;
         
         /// <summary>
         /// Creates a new instance of the RepositoryManager
