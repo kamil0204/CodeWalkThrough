@@ -5,8 +5,9 @@ using CodeWalkThrough.Managers;
 // Path to the repository to analyze
 string projectPath = @"C:\repos\applications.web.intel-foundry.ifs3.api-project";
 
-// Path to store the LiteDB database
-string dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "repository-graph.db");
+// Path to store the databases
+string liteDbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "repository-graph.db");
+string liteGraphDbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "repository-graph-lite.db");
 
 // Path to export the repository structure
 string exportPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "repo-structure");
@@ -16,16 +17,35 @@ try
 {
     Console.WriteLine($"Analyzing repository: {projectPath}");
     
-    // Create the repository manager and analyze structure
-    using var repoManager = new RepositoryManager(projectPath, dbPath);
-    repoManager.AnalyzeAndStoreRepositoryStructure();
+    // First run with LiteDB (default)
+    Console.WriteLine("\n=== Using LiteDB Implementation ===");
+    using (var repoManager = new RepositoryManager(projectPath, liteDbPath, false))
+    {
+        repoManager.AnalyzeAndStoreRepositoryStructure();
+        
+        // Export as Markdown
+        var markdownPath = Path.Combine(exportPath, "repository-structure-litedb.md");
+        repoManager.ExportAsMarkdownTree(markdownPath);
+        
+        Console.WriteLine("LiteDB Analysis completed successfully!");
+        Console.WriteLine($"Markdown tree exported to: {markdownPath}");
+    }
     
-    // Export as Markdown
-    var markdownPath = Path.Combine(exportPath, "repository-structure.md");
-    repoManager.ExportAsMarkdownTree(markdownPath);
+    // Then run with LiteGraph
+    Console.WriteLine("\n=== Using LiteGraph Implementation ===");
+    using (var repoManager = new RepositoryManager(projectPath, liteGraphDbPath, true))
+    {
+        repoManager.AnalyzeAndStoreRepositoryStructure();
+        
+        // Export as Markdown
+        var markdownPath = Path.Combine(exportPath, "repository-structure-litegraph.md");
+        repoManager.ExportAsMarkdownTree(markdownPath);
+        
+        Console.WriteLine("LiteGraph Analysis completed successfully!");
+        Console.WriteLine($"Markdown tree exported to: {markdownPath}");
+    }
     
-    Console.WriteLine("\nAnalysis completed successfully!");
-    Console.WriteLine($"Markdown tree exported to: {markdownPath}");
+    Console.WriteLine("\nBoth implementations have been tested successfully!");
 }
 catch (Exception ex)
 {

@@ -13,16 +13,18 @@ namespace CodeWalkThrough.Managers
     {
         private readonly FileSystemService _fileSystemService;
         private readonly IGraphDatabaseService _databaseService;
-        
-        /// <summary>
+          /// <summary>
         /// Creates a new instance of the RepositoryManager
         /// </summary>
         /// <param name="repositoryPath">Path to the Git repository</param>
         /// <param name="dbPath">Path to the database</param>
-        public RepositoryManager(string repositoryPath, string dbPath)
+        /// <param name="useLiteGraph">Whether to use LiteGraph instead of LiteDB</param>
+        public RepositoryManager(string repositoryPath, string dbPath, bool useLiteGraph = false)
         {
             _fileSystemService = new FileSystemService(repositoryPath);
-            _databaseService = new LiteDbGraphDatabaseService(dbPath);
+            _databaseService = useLiteGraph 
+                ? new LiteGraphDatabaseService(dbPath) 
+                : new LiteDbGraphDatabaseService(dbPath);
         }
         /// <summary>
         /// Analyzes the repository structure and stores it in the database
