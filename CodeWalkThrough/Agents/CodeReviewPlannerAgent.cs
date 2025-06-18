@@ -252,7 +252,7 @@ namespace CodeWalkThrough.Agents
             sb.AppendLine("2. Categorizes files into logical groups based on their purpose in the application");
             sb.AppendLine("3. Lists specific files to review in each category with a brief reason why");
             sb.AppendLine("4. Prioritize categories to indicate which should be reviewed first");
-            sb.AppendLine("5. Focus on entry points like API endpoints, background process, console services, etc.");
+            sb.AppendLine("5. Focus on entry points like API endpoints, background process, console services, etc. Ignore settings and configuration files");
             sb.AppendLine("6. Don't list out files that include business logics and other application specific implementations that involve Database or Http transaction and other files that are not the entry point of the application");
             sb.AppendLine();
             sb.AppendLine("Return your response as a JSON object matching this CodeReviewPlan structure:");

@@ -57,9 +57,10 @@ namespace CodeWalkThrough
             try
             {
                 Console.WriteLine($"Analyzing repository: {ProjectPath}");
-                  // Run database analysis
-                Console.WriteLine("\n=== Analyzing Repository Structure ===");
-                using (var repoManager = new RepositoryManager(ProjectPath, LiteGraphDbPath))
+                
+                // Run with LiteGraph
+                Console.WriteLine("\n=== Using LiteGraph Implementation ===");
+                using (var repoManager = new RepositoryManager(ProjectPath, LiteGraphDbPath, true))
                 {
                     repoManager.AnalyzeAndStoreRepositoryStructure();
                     
